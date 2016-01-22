@@ -1,3 +1,3 @@
-/node_modules
-/public/translations
-
+node_modules
+public/translations
+build

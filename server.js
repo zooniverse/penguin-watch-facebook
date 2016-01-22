@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 
 // Constants
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 // App
 var app = express();

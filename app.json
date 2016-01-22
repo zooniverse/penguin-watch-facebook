@@ -1,0 +1,5 @@
+{
+  "name": "Penguin Watch Facebook",
+  "description": "A Heroku-deployable version of penguin-watch-fb for development",
+  "image": "heroku/nodejs"
+}
