@@ -21,5 +21,8 @@
     "build": "zooniverse-readymade build --force --output ./build --js overrides.coffee --css ./penguin.styl",
     "clean-up": "rm -rf ./build",
     "deploy-locale": "seed-translation --project penguin --env production"
+  },
+  "engines": {
+    "node": "4.2.0"
   }
 }
