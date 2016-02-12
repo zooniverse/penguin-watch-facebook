@@ -12,7 +12,11 @@
     "translator-seed": "^0.1.2",
     "zooniverse": "zooniverse/zooniverse#ba39564",
     "zooniverse-decision-tree": "0.0.2",
-    "zooniverse-readymade": "zooniverse/zooniverse-readymade#293cf1c"
+    "zooniverse-readymade": "zooniverse/zooniverse-readymade#293cf1c",
+    "jquery": "^2.1.0",
+    "marking-surface": "^0.6.4",
+    "stack-of-pages": "~0.1.3",
+    "zooniverse-decision-tree": "0.0.2"    
   },
   "scripts": {
     "start": "zooniverse-readymade serve --port 3665 --project ./project.coffee --js overrides.coffee --css ./penguin.styl",
