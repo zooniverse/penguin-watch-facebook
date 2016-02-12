@@ -11,7 +11,6 @@
     "t7e": "~0.3.1",
     "translator-seed": "^0.1.2",
     "zooniverse": "zooniverse/zooniverse#ba39564",
-    "zooniverse-decision-tree": "0.0.2",
     "zooniverse-readymade": "zooniverse/zooniverse-readymade#293cf1c",
     "jquery": "^2.1.0",
     "marking-surface": "^0.6.4",
