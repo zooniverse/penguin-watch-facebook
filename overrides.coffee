@@ -7,6 +7,8 @@ require './attribute-background-image'
 require './confirm-button-label'
 require './task-defaults'
 
+require './fb-init'
+
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 analytics = new GoogleAnalytics
   account: 'UA-1224199-57'
