@@ -14,6 +14,7 @@ languageManager = new zooniverse.LanguageManager({
     es: label: "Español", strings: "./translations/es.json"
     # ru: label: "русский", strings: './translations/ru.json'
     cs: label: 'Čeština', strings: './translations/cs.json'
+    el: label: 'Ελληνικά', strings: './translations/el.json'
   }
 })
 
@@ -34,7 +35,7 @@ buildObject = (fn) ->
 ok = translate 'span', 'ok'
 
 [apiHost, apiProxyPath] = if window.location.hostname is 'www.penguinwatch.org'
-  ['http://www.penguinwatch.org', '/_ouroboros_api/proxy']
+  ['https://www.penguinwatch.org', '/_ouroboros_api/proxy']
 else
   [null, null]
 
@@ -157,65 +158,38 @@ module.exports =
       }]
 
   tutorialSteps: [{
-    image: './tutorial/intro.jpg'
-    content: translate 'p', 'tutorial.welcome'
-  }, {
     image: './tutorial/marked.jpg'
     content: translate 'p', 'tutorial.marking'
   }, {
-    image: './tutorial/marked.jpg'
-    content: translate 'p', 'tutorial.removing'
+    image: './tutorial/distant.jpg'
+    content: translate 'p', 'tutorial.distant'
+  }, {
+    image: './tutorial/blurred.jpg'
+    content: translate 'p', 'tutorial.blurred'
   }, {
     image: './tutorial/other.jpg'
     content: translate 'p', 'tutorial.other'
-  }, {
-    image: './tutorial/talk.jpg'
-    content: translate 'p', 'tutorial.talk'
   }]
 
   examples: [{
-    label: translate 'span', 'fieldGuide.gentoo'
+    label: translate 'span', 'fieldGuide.parade'
     figures: [{
-      image: './field-guide/gentoo-guarded.png'
-      label: translate 'span', 'fieldGuide.adult'
+      label: translate 'span', 'fieldGuide.king'
+      image: './field-guide/king.jpg'
     }, {
-      image: './field-guide/gentoo-unguarded.png'
-      label: translate 'span', 'fieldGuide.chick'
-    }]
-  }, {
-    label: translate 'span', 'fieldGuide.chinstrap'
-    figures: [{
-      image: './field-guide/chinstrap-guarded.jpg'
-      label: translate 'span', 'fieldGuide.adult'
+      label: translate 'span', 'fieldGuide.gentoo'
+      image: './field-guide/gentoo.jpg'
     }, {
-      image: './field-guide/chinstrap-unguarded.png'
-      label: translate 'span', 'fieldGuide.chick'
-    }]
-  }, {
-    label: translate 'span', 'fieldGuide.adelie'
-    figures: [{
-      image: './field-guide/adelie-guarded.png'
-      label: translate 'span', 'fieldGuide.adult'
+      label: translate 'span', 'fieldGuide.adelie'
+      image: './field-guide/adelie.jpg'
     }, {
-      image: './field-guide/adelie-unguarded.png'
-      label: translate 'span', 'fieldGuide.chick'
-    }]
-  }, {
-    label: translate 'span', 'fieldGuide.king'
-    figures: [{
-      image: './field-guide/king-guarded.png'
-      label: translate 'span', 'fieldGuide.adult'
+      label: translate 'span', 'fieldGuide.chinstrap'
+      image: './field-guide/chinstrap.jpg'
     }, {
-      image: './field-guide/king-unguarded.png'
-      label: translate 'span', 'fieldGuide.chick'
-    }]
-  }, {
-    label: translate 'span', 'fieldGuide.rockhopper'
-    figures: [{
-      image: './field-guide/rockhopper-guarded.jpg'
-      label: translate 'span', 'fieldGuide.adult'
+      label: translate 'span', 'fieldGuide.rockhopper'
+      image: './field-guide/rockhopper.jpg'
     }, {
-      image: './field-guide/rockhopper-unguarded.jpg'
-      label: translate 'span', 'fieldGuide.chick'
+      label: translate 'span', 'fieldGuide.macaroni'
+      image: './field-guide/macaroni.jpg'
     }]
   }]
