@@ -23,6 +23,11 @@ FieldGuide::template = (examples) -> "
     </div>
   "
 
+# Override the Classification Summary so we can do our custom FB stuff before
+# the project is instantiated.
+require './facebook-init'
+require './facebook-classification-summary'
+
 currentProject = require 'zooniverse-readymade/current-project'
 classify_page = currentProject.classifyPages[0]
 
@@ -40,7 +45,6 @@ require './attribute-background-image'
 require './confirm-button-label'
 require './task-defaults'
 
-require './fb-init'
 
 GoogleAnalytics = require 'zooniverse/lib/google-analytics'
 analytics = new GoogleAnalytics
