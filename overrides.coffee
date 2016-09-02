@@ -25,6 +25,7 @@ FieldGuide::template = (examples) -> "
 
 # Override the Classification Summary so we can do our custom FB stuff before
 # the project is instantiated.
+require './facebook-sdk'
 require './facebook-init'
 require './facebook-classification-summary'
 
