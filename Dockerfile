@@ -12,4 +12,4 @@ COPY . /app
 # Run app
 EXPOSE 8080
 RUN npm run build
-CMD ["node", "server.js"]
+CMD ["node", "docker-server.js"]
