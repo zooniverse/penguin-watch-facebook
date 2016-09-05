@@ -1,33 +1,31 @@
-ClassificationSumary = require 'zooniverse-readymade/lib/classification-summary'
+Classifier = require 'zooniverse-readymade/lib/classifier'
+ClassificationSummary = require 'zooniverse-readymade/lib/classification-summary'
 fbConfig = require './facebook-config'
 
-ClassificationSumary::template = require './templates/facebook-classification-summary'
-ClassificationSumary::elements =
+ClassificationSummary::template = require './templates/facebook-classification-summary'
+ClassificationSummary::elements =
   '.readymade-existing-comments': 'existingCommentsText'
   '.readymade-existing-comments-count': 'existingCommentsCount'
   '.readymade-talk-link': 'talkLink'
   '.readymade-twitter-link': 'twitterLink'
   '.readymade-facebook-link': 'facebookLink'
 
-ClassificationSumary::events =
-    'click button[name="readymade-dont-talk"]': ->
-      @trigger @DISMISS
-    'click button[name="readymade-facebook-share"]': "shareOnNewsFeed"
+ClassificationSummary::events =
+  'click button[name="readymade-dont-talk"]': ->
+    @trigger @DISMISS
+  'click button[name="readymade-facebook-share"]': "shareOnNewsFeed"
 
-ClassificationSumary::shareOnNewsFeed = ->
+ClassificationSummary::shareOnNewsFeed = ->
+  actionProperties =
+    object:
+      'og:image': window.classifier.Subject.current.location.standard
+      'og:title': "I'm classifying penguins in Antarctica!"
+      'og:description': "Penguin Watch helps conservation efforts in the South Pole by helping to count penguin populations."
+      'og:site_name': 'Penguin Watch'
+      'og:url': fbConfig.url
+      'fb:app_id': fbConfig.appId
+
   FB.ui
-      method: 'share_open_graph'
-      action_type: 'og.shares'
-      action_properties: JSON.stringify
-        object:
-          # 'og:image': @props.subject.locations[0]['image/jpeg']
-          # 'og:title': message
-          # 'og:description': "I'm classifying penguins in Antarctica!"
-          'og:site_name': 'Penguin Watch'
-          'og:url': fbConfig.url
-          'fb:app_id': fbConfig.appId
-
-
-# TODO:
-# Remove the discuss on talk button, replace with Next
-# Add in button for sharing on FB News Feed
+    method: 'share_open_graph'
+    action_type: 'og.shares'
+    action_properties: JSON.stringify actionProperties

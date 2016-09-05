@@ -20,9 +20,9 @@ app.use('/', express.static(__dirname + '/build'));
 
 // Try sending back the home page
 app.post('/', function(req, res, next) {
-    res.sendFile(__dirname + '/build/index.html');
+  res.sendFile(__dirname + '/build/index.html');
 });
 
 app.listen(PORT, function () {
-    console.log('Running on http://localhost:' + PORT);
+  console.log('Running on http://localhost:' + PORT);
 });

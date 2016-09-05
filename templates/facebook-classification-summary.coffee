@@ -6,7 +6,7 @@ module.exports = -> "
   <div>
     <p>Share this image with your friends!</p>
 
-    <button type='button' name='readymade-facebook-share'>Share</button>
+    <button type='button' name='readymade-facebook-share'>readymade-facebook-share</button>
 
     <p class='readymade-talk'>
       <button type='button' name='readymade-dont-talk'>Next image</button>
