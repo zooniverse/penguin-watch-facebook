@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:0.10
 
 # Install app dependencies
 RUN mkdir /app
