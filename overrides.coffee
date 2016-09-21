@@ -1,3 +1,5 @@
+Api = require './api'
+
 FieldGuide = require 'zooniverse-readymade/lib/field-guide'
 FieldGuide::template = (examples) -> "
     <div class='readymade-field-guide-tabs'>
@@ -47,7 +49,7 @@ require './confirm-button-label'
 require './task-defaults'
 
 
-GoogleAnalytics = require 'zooniverse/lib/google-analytics'
+GoogleAnalytics = window?.GoogleAnalytics or require('zooniverse/lib/google-analytics')
 analytics = new GoogleAnalytics
   account: 'UA-1224199-57'
   domain: 'www.penguinwatch.org'

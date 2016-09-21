@@ -1,5 +1,5 @@
 currentProject = require 'zooniverse-readymade/current-project'
-Dialog = require 'zooniverse/controllers/dialog'
+Dialog = zooniverse?.controllers?.Dialog or require('zooniverse/controllers/dialog')
 translate = require 't7e'
 
 {decisionTree, subjectViewer} = currentProject.classifyPages[0]
