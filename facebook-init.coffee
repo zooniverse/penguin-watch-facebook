@@ -1,6 +1,8 @@
+fbConfig = require './facebook-config'
+
 window.fbAsyncInit = ->
   FB.init
-    appId: '917543728371936'
+    appId: fbConfig.appId
     xfbml: true
     version: 'v2.7'
 

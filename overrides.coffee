@@ -28,7 +28,7 @@ FieldGuide::template = (examples) -> "
 # Override the Classification Summary so we can do our custom FB stuff before
 # the project is instantiated.
 require './facebook-init'
-require './facebook-classification-summary'
+# require './facebook-classification-summary'
 
 currentProject = require 'zooniverse-readymade/current-project'
 classify_page = currentProject.classifyPages[0]
