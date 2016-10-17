@@ -1,8 +1,12 @@
 Classifier = require 'zooniverse-readymade/lib/classifier'
 ClassificationSummary = require 'zooniverse-readymade/lib/classification-summary'
 fbConfig = require './facebook-config'
+fbEnv = require './facebook-env'
+
+config = fbConfig[fbEnv]
 
 ClassificationSummary::template = require './templates/facebook-classification-summary'
+
 ClassificationSummary::elements =
   '.readymade-existing-comments': 'existingCommentsText'
   '.readymade-existing-comments-count': 'existingCommentsCount'
@@ -16,14 +20,17 @@ ClassificationSummary::events =
   'click button[name="readymade-facebook-share"]': "shareOnNewsFeed"
 
 ClassificationSummary::shareOnNewsFeed = ->
+  currentProject = require 'zooniverse-readymade/current-project'
+  currentSubject = currentProject.classifyPages[0].Subject.current.location.standard
+  
   actionProperties =
     object:
-      'og:image': window.classifier.Subject.current.location.standard
+      'og:image': currentSubject
       'og:title': "I'm classifying penguins in Antarctica!"
       'og:description': "Penguin Watch helps conservation efforts in the South Pole by helping to count penguin populations."
       'og:site_name': 'Penguin Watch'
-      'og:url': fbConfig.url
-      'fb:app_id': fbConfig.appId
+      'og:url': config.url
+      'fb:app_id': config.appId
 
   FB.ui
     method: 'share_open_graph'

@@ -10,6 +10,7 @@ RUN npm install
 COPY . /app
 
 # Run app
-EXPOSE 8080
-RUN npm run build
+EXPOSE 80
+ENV FB_ENV production
+RUN npm run build-facebook
 CMD ["node", "docker-server.js"]
