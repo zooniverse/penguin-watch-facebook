@@ -27,7 +27,7 @@ classifyPage.on classifyPage.LOAD_SUBJECT, (e, subject) ->
   nestingOutline = null
 
   $.when(rois).then (rois) ->
-    site = subject.metadata.path.split('/')[1].split('_')[0]
+    site = subject.metadata?.path?.split('/')[1].split('_')[0]
 
     {width, height} = classifyPage.subjectViewer.markingSurface.svg.el.viewBox.animVal
 
