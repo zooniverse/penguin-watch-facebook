@@ -9,8 +9,8 @@ fbConfig =
     appId: '917543728371936'
     url: 'https://apps.facebook.com/penguin-watch/'
 
-ENV = 'dev'
-# ENV = 'production'
+# ENV = 'dev'
+ENV = 'production'
 
 console.log 'Environment set to', ENV, fbConfig[ENV]
 

@@ -6,7 +6,7 @@ var express = require('express');
 var morgan = require('morgan');
 
 // Constants
-var PORT = process.env.PORT || 1000;
+var PORT = process.env.PORT || 80;
 
 // App
 var app = express();
