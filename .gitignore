@@ -2,3 +2,5 @@
 /public/translations
 /npm-debug.log
 /build
+
+facebook-env.coffee
