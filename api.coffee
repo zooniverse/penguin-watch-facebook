@@ -21,6 +21,9 @@ class Api extends EventEmitter
     if typeof data is 'function'
       [fail, done, data] = [done, data, null]
 
+    if typeof data is 'object'
+      data = JSON.parse JSON.stringify data
+
     request = $.ajax {type, url, data, dataType}
     request.done done
     request.fail fail
