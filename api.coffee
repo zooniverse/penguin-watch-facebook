@@ -18,10 +18,13 @@ class Api extends EventEmitter
     dataType = 'json'
     headers = { }
     url = "#{@host}#{url}"
+
     if typeof data is 'function'
       [fail, done, data] = [done, data, null]
 
-    if typeof data is 'object'
+    if typeof data is 'object' and data isnt null
+      if data.classification
+        data.classification.annotations.push 'facebook': 'true'
       data = JSON.parse JSON.stringify data
 
     request = $.ajax {type, url, data, dataType}
