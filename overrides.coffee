@@ -1,3 +1,5 @@
+Api = require './api'
+
 FieldGuide = require 'zooniverse-readymade/lib/field-guide'
 FieldGuide::template = (examples) -> "
     <div class='readymade-field-guide-tabs'>
@@ -25,7 +27,6 @@ FieldGuide::template = (examples) -> "
 
 # Override the Classification Summary so we can do our custom FB stuff before
 # the project is instantiated.
-require './facebook-sdk'
 require './facebook-init'
 require './facebook-classification-summary'
 
@@ -47,7 +48,7 @@ require './confirm-button-label'
 require './task-defaults'
 
 
-GoogleAnalytics = require 'zooniverse/lib/google-analytics'
+GoogleAnalytics = window?.GoogleAnalytics or require('zooniverse/lib/google-analytics')
 analytics = new GoogleAnalytics
   account: 'UA-1224199-57'
   domain: 'www.penguinwatch.org'

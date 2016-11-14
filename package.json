@@ -15,13 +15,14 @@
     "translator-seed": "^0.1.2",
     "zooniverse": "~0.8.10",
     "zooniverse-decision-tree": "0.0.2",
-    "zooniverse-readymade": "~1.1.3"
+    "zooniverse-readymade": "git://github.com/parrish/zooniverse-readymade.git#add-flexibility"
   },
   "scripts": {
     "start": "zooniverse-readymade serve --port 3665 --project ./project.coffee --js overrides.coffee --css ./penguin.styl",
     "deploy": "npm run build && publisssh ./build zooniverse-static/www.penguinwatch.org --force && npm run clean-up",
     "beta": "npm run build && publisssh ./build zooniverse-static/www.penguinwatch.org/beta --force && npm run clean-up",
     "build": "zooniverse-readymade build --force --output ./build --js overrides.coffee --css ./penguin.styl",
+    "build-facebook": "node preflight-set-facebook-env.js && npm run build",
     "clean-up": "rm -rf ./build",
     "deploy-locale": "seed-translation --project penguin --env production"
   }

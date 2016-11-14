@@ -1,10 +1,13 @@
+Api = require './api'
+TopBar = window?.zooniverse?.controllers.TopBar or require('zooniverse/controllers/top-bar')
+
 Pinpoint = require './pinpoint'
 MagnifierPoint = require 'marking-surface/lib/tools/magnifier-point'
 teamPage = require './templates/team-page'
 team = require './content/team'
 
 t7e = require 't7e'
-zooTranslate = require 'zooniverse/lib/translate'
+zooTranslate = window.zooniverse?.translate or require('zooniverse/lib/translate')
 enUs = require './lib/en-us'
 t7e.load enUs
 
@@ -34,15 +37,18 @@ buildObject = (fn) ->
 # decision tree button text
 ok = translate 'span', 'ok'
 
-[apiHost, apiProxyPath] = if window.location.hostname is 'www.penguinwatch.org'
-  ['https://www.penguinwatch.org', '/_ouroboros_api/proxy']
+apiHost = if window.location.hostname isnt 'localhost'
+  'https://api.zooniverse.org'
 else
-  [null, null]
+  'https://dev.zooniverse.org'
 
 module.exports =
   id: 'penguin'
   apiHost: apiHost
-  apiProxyPath: apiProxyPath
+
+  connect: ->
+    @api = new Api project: @id, host: @apiHost
+    @topBar = new TopBar el: '#top-bar'
 
   producer: translate 'div', 'producer'
   title: translate 'div', 'title'

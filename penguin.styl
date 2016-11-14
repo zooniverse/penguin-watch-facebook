@@ -37,17 +37,6 @@ body
     .readymade-main-stack
       width: 95vw
 
-  [data-readymade-page="competition"] > * // Translated element
-    display: flex
-    padding: 3em 5em
-
-    & > section
-      flex: 5
-
-      & + section
-        flex: 2
-        margin-left: 3vw
-
   [data-readymade-page="science"] > * // Translated element
     background: rgba(white, 0.8)
     color: black
@@ -155,84 +144,19 @@ body
   &[data-count="0"]
     display: none
 
-// Competition component
-.competition
-  background: rgba(black, 0.6)
-  color: white
-  font-smoothing: antialiased
-  margin: 2em 0
-  padding: 3em 0
-  text-align: center
+#top-bar
+  display: none
 
-.competition-container
-  margin: 0 auto
-  max-width: 880px
-  padding: 0 1em
-  a
-    color: white
-    font-weight: bold
-    text-decoration: none
+.drawing-controls .readymade-has-clickable:first-of-type
+  display: none
 
-.competition-header-text
-  font-size: 30px
-  font-weight: 300
-  margin: 1em 0
-  line-height: 38px
-  text-align: center
+.readymade-share button
+  background: #fff !important
+  color: #222 !important
 
-.competition-body-text
-  font-size: 18px
-  line-height: 26px
-  margin: 0 0 1em 0
-  text-align: center
+.readymade-share button:hover
+  background: inherit !important
+  color: inherit !important
 
-  .highlight
-    color: #fbb431
-    font-weight: 700
-
-.competition-button
-  border: 2px solid white
-  border-radius: 6px
-  cursor: pointer
-  display: block
-  font-family: inherit
-  font-size: 20px
-  font-weight: 700
-  height: 50px
-  margin: 1em auto
-  outline: none
-  width: 255px
-
-  &.enter
-    background: white
-    color: black
-
-    &.entered
-      background: #fbb431
-      border-color: #fbb431
-      color: black
-      cursor: no-drop
-
-  &.learn-more
-    background: none
-    color: white
-
-.competition-footer
-  margin: 0 auto
-  max-width: 630px
-
-.competition-footer-text
-  font-size: 14px
-  margin: 1em 0
-
-.competition-small-text
-  color: #d3d3d3
-  font-size: 12px
-  line-height: 20px
-  margin: 2em 0
-  text-align: center
-
-  b
-    color: white
-    font-style: italic
-    font-weight: 700
+#profile
+  display: none
