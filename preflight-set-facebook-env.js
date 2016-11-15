@@ -4,7 +4,7 @@
 var fs = require('fs');
 
 var ENV = process.env.FB_ENV || 'dev';
-var TEMPLATE = `module.exports = '${ENV}'`;
+var TEMPLATE = 'module.exports = \'' + ENV + '\';';
 var TARGET_FILE = __dirname + '/facebook-env.coffee';
 
 fs.writeFile(TARGET_FILE, TEMPLATE, function(err) {
