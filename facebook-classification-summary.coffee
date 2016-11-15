@@ -16,8 +16,17 @@ ClassificationSummary::elements =
 
 ClassificationSummary::events =
   'click button[name="readymade-dont-talk"]': ->
+    @fireFBClassificationEvent()
     @trigger @DISMISS
   'click button[name="readymade-facebook-share"]': "shareOnNewsFeed"
+
+ClassificationSummary::fireFBClassificationEvent = ->
+  currentProject = require 'zooniverse-readymade/current-project'
+  currentSubject = currentProject.classifyPages[0].Subject.current.id
+
+  params =
+    CONTENT_ID: currentSubject
+  FB.AppEvents.logEvent 'CLASSIFIED_SUBJECT', null, params
 
 ClassificationSummary::shareOnNewsFeed = ->
   currentProject = require 'zooniverse-readymade/current-project'

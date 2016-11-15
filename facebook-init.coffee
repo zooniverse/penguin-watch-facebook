@@ -9,6 +9,7 @@ window.fbAsyncInit = ->
     appId: config.appId
     xfbml: true
     version: 'v2.7'
+  FB.AppEvents.logEvent 'VISITED_APP'
 
 # Facebook SDK snippet
 `
