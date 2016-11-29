@@ -66,14 +66,6 @@ module.exports =
     content: teamPage team
   }]
 
-  externalLinks: buildObject ->
-    @[translate 'span', 'links.faq'] = 'http://talk.penguinwatch.org/#/boards/BPZ0000007'
-    @[translate 'span', 'links.talk'] = 'http://talk.penguinwatch.org/'
-    @[translate 'span', 'links.blog'] = 'http://penguinlifelines.wordpress.com/'
-    @[translate 'span', 'links.twitter'] = 'http://twitter.com/penguin_watch/'
-    @[translate 'span', 'links.facebook'] = 'https://www.facebook.com/PenguinZoo'
-    @[translate 'span', 'links.google'] = 'https://plus.google.com/u/1/112444605806295376760/posts'
-
   firstTask: 'animalsPresent'
 
   tasks:
